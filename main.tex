@@ -1,0 +1,75 @@
+\documentclass[
+english,
+revbib,
+skipsamekey
+]{curve}
+%% CV for Joel A. Berger
+%% Updated: Mar, 8 2011
+
+\providecommand{\mybibstyle}[0]{unsrt}
+%\providecommand{\mybibstyle}[0]{plain}
+%\providecommand{\mybibstyle}[0]{./plainyr-rev.bst}
+
+\usepackage[
+resetlabels
+]{multibib}
+\newcites{A,B,C}{{List of Publications},{List of Presentations},{List of UIC Presentations}}
+
+\usepackage
+[ nohead, nofoot, hmargin=1.5cm, vmargin=1.5cm ]
+{geometry}
+
+\usepackage{url}
+
+\leftheader{
+  \textbf{\LARGE Joel A. Berger} \\
+  \ \\
+  Tel: (847) 702-8856 \\
+  Fax: (312) 996-9016 \\
+  \url{jberge2@uic.edu} \\
+  \url{joel.a.berger@gmail.com} \\
+  \url{http://ultrafast.phy.uic.edu}
+}
+
+\rightheader{
+	University of Illinois at Chicago \\
+	Dept. of Physics (M/C 273) \\
+	845 W. Taylor Street \\
+	Chicago, IL 60607-7059 \\
+	\ \\
+	2307 Willow Ln. \\
+	Rolling Meadows, IL 60008
+}
+
+\title{Ph.D. Student in Physics}
+\subtitle{Graduate Research Assistant --- Ultrafast Electron Microscopy}
+\subtitlefont{
+  \LARGE%\itshape
+} %redefined from \Huge\itshape as default
+
+\begin{document}
+
+\rubricalignment{l}
+\makeheaders
+\maketitle[l]
+
+\makerubric{personal}
+\makerubric{education}
+\makerubric{experience}
+
+%% Bibliography A ==> Publications
+\nociteA{*}
+\bibliographystyleA{\mybibstyle}
+\bibliographyA{publications}
+
+%% Bibliography B ==> Presentations
+\nociteB{*}
+\bibliographystyleB{\mybibstyle}
+\bibliographyB{presentations}
+
+%% Bibliography C ==> Dept.
+\nociteC{*}
+\bibliographystyleC{\mybibstyle}
+\bibliographyC{uic}
+
+\end{document}
