@@ -3,18 +3,15 @@
 %% CV for Joel A. Berger
 %% Updated: Mar, 8 2011
 
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \addbibresource[label=publications]{publications.bib}
-%\addbibresource[label=presentations]{presentations.bib}
-%\addbibresource[label=uic]{uic.bib}
+\addbibresource[label=presentations]{presentations.bib}
+\addbibresource[label=uic]{uic.bib}
 
 \defbibheading{curve}[\bibname]{
-  %\makeatletter
-  %  \@rubrichead{#1}
-  %\makeatother
-  %\section*{#1}
-  %\thispagestyle{myheadings}
+  \vspace{10pt}
   \Large\bfseries #1
+  \vspace{10pt}
 }
 
 \usepackage
