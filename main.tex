@@ -3,10 +3,21 @@
 %% CV for Joel A. Berger
 %% Updated: Mar, 8 2011
 
-\usepackage[sorting=ynt]{biblatex}
+\usepackage[sorting=ydnt]{biblatex}
 \addbibresource[label=publications]{publications.bib}
 \addbibresource[label=presentations]{presentations.bib}
 \addbibresource[label=uic]{uic.bib}
+
+% Count number of entries in the bbl file (plus one)
+\newcounter{entrycount}
+\setcounter{entrycount}{1}
+\AtEveryCite{\addtocounter{entrycount}{1}}
+
+% Print the labelnumber as the above count minus the actual labelnumber
+\DeclareFieldFormat{labelnumber}{%
+  \number\numexpr\value{entrycount}-#1\relax}
+
+% Make biblatex look a little more CurVe-like
 
 \defbibheading{curve}[\bibname]{
   \vspace{10pt}
@@ -64,12 +75,14 @@
 
 %% Bibliography B ==> Presentations
 \begin{refsection}[presentations]
+\setcounter{entrycount}{1}
 \nocite{*}
 \printbibliography[title=List of Presentations,heading=curve]
 \end{refsection}
 
 %% Bibliography C ==> Dept.
 \begin{refsection}[uic]
+\setcounter{entrycount}{1}
 \nocite{*}
 \printbibliography[title=List of UIC Presentations,heading=curve]
 \end{refsection}
