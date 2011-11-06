@@ -10,6 +10,7 @@ main.pdf
 *.acr
 *.alg
 *.bbl
+*-blx*
 *.blg
 *.dvi
 *.glg
@@ -26,3 +27,4 @@ main.pdf
 *.fdb_latexmk
 .project
 .texlipse
+*.xml
